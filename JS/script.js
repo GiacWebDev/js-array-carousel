@@ -1,8 +1,8 @@
 
 // elementi presi da HTML
 const itemsWrapper = document.querySelector('.items-wrapper');
-const btnNext = document.querySelector('.next');
-const btnPrev = document.querySelector('.prev');
+const btnUp = document.querySelector('.up');
+const btnDown = document.querySelector('.down');
 
 
 // salvo le immagini in un array
@@ -18,7 +18,7 @@ const listaImmagini = [
 let imgCounter = 0
 
 // creo ciclo immagini
-for (i = 0; i < listaImmagini.length; ++i) {
+for (let i = 0; i < listaImmagini.length; ++i) {
   // prendo un'immagine singola
   const image = listaImmagini[i];
 
@@ -29,12 +29,24 @@ for (i = 0; i < listaImmagini.length; ++i) {
 
 // prendi tutti gli elementi che hanno item come classe
 const itemCollection = document.getElementsByClassName('item');
-console.log(itemCollection);
 
 // imposto la classe hide al counter delle img in modo da applicarsi in automatico grazie al ciclo
 itemCollection[imgCounter].classList.remove('hide');
 
-btnNext.addEventListener('click', function(){
-
+btnDown.addEventListener('click', function(){
+  // nascondo ila img al click
+  itemCollection[imgCounter].classList.add('hide');
+  // quanto il counter avanza di 1 riattivo la visibilità rimuovendo hide
+  imgCounter++
+  itemCollection[imgCounter].classList.remove('hide')
 });
+
+btnUp.addEventListener('click', function(){
+  itemCollection[imgCounter].classList.add('hide');
+ 
+  imgCounter--
+  itemCollection[imgCounter].classList.remove('hide')
+});
+
+console.log(itemCollection);
 
