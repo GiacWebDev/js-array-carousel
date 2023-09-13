@@ -38,3 +38,31 @@
   height: 100%;
   object-fit: cover;
 }
+
+.btn-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.662);
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.btn-arrow:hover{
+  background-color: aliceblue;
+  color: black;
+}
+
+.btn-arrow.prev {
+  left: 20px;
+}
+
+.btn-arrow.next {
+  right: 20px;
+}

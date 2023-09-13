@@ -10,10 +10,14 @@ const listaImmagini = [
   'img/05.webp'
 ];
 
+let imgCounter = 0
 
 // creo ciclo immagini
 for (i = 0; i < listaImmagini.length; ++i) {
   const image = listaImmagini[i];
-  itemsWrapper.innerHTML += `<img src="${image}" class="hide" alt="">`;
-  
+  itemsWrapper.innerHTML += `<img src="${image}" class="hide item" alt="">`;
 }
+
+const itemCollection = document.getElementById('item');
+
+itemCollection[imgCounter].classlist.remove('hide');
